@@ -57,11 +57,10 @@ def validate_customers(
        )
  
     if invalid_email.any():
-
         raise ValueError(
         "Invalid email found"
        )
-
+# validate city is not null
     logger.info(
         "Validation passed"
     )
