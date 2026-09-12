@@ -51,6 +51,11 @@ def validate_customers(
         na=False
         )
 
+    if df["email"].isnull().any():
+        raise ValueError(
+        "email contains NULL"
+       )
+ 
     if invalid_email.any():
 
         raise ValueError(

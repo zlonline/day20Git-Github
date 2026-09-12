@@ -100,3 +100,26 @@ def test_missing_email_column():
         validate_customers(
             df
         )
+
+def test_null_email():
+
+    df = pd.DataFrame(
+        {
+            "customer_id": [1],
+            "name": ["John"],
+            "email": [None],
+            "city": ["Toronto"],
+            "updated_at": [
+                "2026-09-10 10:00:00"
+            ],
+        }
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="email contains NULL"
+    ):
+
+        validate_customers(
+            df
+        )
