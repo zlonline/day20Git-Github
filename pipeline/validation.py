@@ -33,7 +33,7 @@ def validate_customers(
         raise ValueError(
             "customer_id contains NULL"
         )
-
+# validate customer_id if it's duplicated
     if df["customer_id"].duplicated().any():
 
         raise ValueError(
