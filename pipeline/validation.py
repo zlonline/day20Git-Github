@@ -45,7 +45,7 @@ def validate_customers(
         raise ValueError(
             "updated_at contains NULL"
         )
-
+# validate email format
     invalid_email = ~df["email"].str.contains(
         "@",
         na=False
