@@ -39,7 +39,7 @@ def validate_customers(
         raise ValueError(
             "Duplicate customer_id found"
         )
-
+# validate updated_at is not null
     if df["updated_at"].isnull().any():
 
         raise ValueError(
